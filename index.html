@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090208">
+  <meta name="description" content="Irfan — photography, creative editing and AI experiments.">
+  <title>IRFAN — Creative Portfolio</title>
+  <style>
+    :root{--bg:#090208;--panel:rgba(30,5,18,.72);--pink:#ff315f;--pink2:#ff7896;--text:#f8edf1;--muted:#b8a6ae}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;overflow-x:hidden}
+    #particles{position:fixed;inset:0;width:100%;height:100%;z-index:-1;opacity:.75}
+    body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 50% 25%,rgba(117,0,37,.32),transparent 55%),linear-gradient(180deg,#10030b 0%,#090208 65%,#050105 100%)}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1100px,92%);margin:auto}
+    header{position:sticky;top:12px;z-index:10;padding-top:12px}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:15px 22px;border:1px solid rgba(255,75,115,.3);border-radius:22px;background:rgba(12,3,9,.78);backdrop-filter:blur(16px)}
+    .brand{font-weight:900;letter-spacing:5px;font-size:24px}.brand span{color:var(--pink)}
+    .navlinks{display:flex;gap:22px;color:#d7c6cd;font-size:13px}
+    .navlinks a:hover{color:var(--pink2)}
+    .connect{border:1px solid rgba(255,80,120,.55);padding:12px 20px;border-radius:30px;color:#ff9bb0;font-size:12px;letter-spacing:1px}
+    .hero{min-height:calc(100vh - 80px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:76px 0 60px}
+    .eyebrow{color:var(--pink2);letter-spacing:5px;font-size:11px;text-transform:uppercase;margin-bottom:22px}
+    h1{font-size:clamp(64px,14vw,150px);line-height:.82;letter-spacing:-.075em;margin:0;font-weight:950;text-transform:uppercase;text-shadow:0 10px 40px rgba(255,0,70,.2)}
+    h1 span{display:block;color:var(--pink);background:linear-gradient(180deg,#ff6684,#d9003b 70%,#79001f);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .roles{font-size:clamp(17px,3vw,27px);margin:38px 0 16px;color:#eee}.roles b{color:var(--pink2)}
+    .intro{max-width:690px;color:var(--muted);font-size:clamp(15px,2vw,19px);line-height:1.8;margin:8px auto 32px}
+    .intro strong{color:var(--pink2)}
+    .actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-width:205px;padding:18px 25px;border-radius:20px;border:1px solid rgba(255,90,130,.55);font-weight:800;letter-spacing:1px;font-size:13px;transition:.25s}
+    .primary{background:linear-gradient(110deg,#ff3158,#bd003b);box-shadow:0 12px 38px rgba(255,0,70,.2)}
+    .secondary{background:rgba(255,255,255,.025);color:#e7d6dd}
+    .btn:hover{transform:translateY(-4px);filter:brightness(1.15)}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;width:min(700px,100%);margin-top:90px}
+    .stat strong{display:block;color:var(--pink2);font-size:clamp(28px,5vw,43px);font-weight:900}
+    .stat small{display:block;margin-top:8px;color:#9f8992;letter-spacing:3px;font-size:10px}
+    section{padding:88px 0}
+    .section-tag{color:var(--pink2);font-size:11px;letter-spacing:4px;text-transform:uppercase}
+    h2{font-size:clamp(32px,6vw,55px);margin:12px 0 18px;letter-spacing:-2px}
+    .section-copy{max-width:650px;color:var(--muted);line-height:1.8}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:35px}
+    .card{border:1px solid rgba(255,75,115,.22);border-radius:22px;padding:26px;background:linear-gradient(145deg,rgba(46,8,25,.7),rgba(15,4,11,.65));min-height:180px;transition:.25s}
+    .card:hover{transform:translateY(-5px);border-color:rgba(255,75,115,.6)}
+    .card .icon{font-size:28px}.card h3{margin:18px 0 8px}.card p{margin:0;color:var(--muted);font-size:14px;line-height:1.7}
+    .project{min-height:170px;display:flex;flex-direction:column;justify-content:space-between}
+    .project span{color:var(--pink2);font-size:11px;letter-spacing:2px}
+    .contact-box{border:1px solid rgba(255,75,115,.3);border-radius:28px;padding:clamp(25px,6vw,55px);background:radial-gradient(circle at 90% 10%,rgba(255,40,90,.15),transparent 45%),var(--panel)}
+    footer{text-align:center;padding:30px 0 45px;color:#806d76;font-size:12px}
+    @media(max-width:700px){.navlinks{display:none}.hero{padding-top:70px}.stats{margin-top:65px;gap:8px}.stat small{letter-spacing:1.5px}.cards{grid-template-columns:1fr}.btn{width:min(100%,330px)}section{padding:65px 0}}
+  </style>
+</head>
+<body>
+<canvas id="particles"></canvas>
+<div class="wrap">
+  <header>
+    <nav>
+      <a class="brand" href="#home">IRFAN<span>.</span></a>
+      <div class="navlinks"><a href="#about">ABOUT</a><a href="#skills">SKILLS</a><a href="#projects">PROJECTS</a></div>
+      <a class="connect" href="#contact">CONNECT ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="eyebrow">Welcome to my creative space</div>
+      <h1>IRFAN<span>CREATES</span></h1>
+      <div class="roles"><b>Photographer</b> · Creative Editor · AI Explorer</div>
+      <p class="intro">I explore ideas through <strong>photography, visual editing and AI creativity</strong> — turning inspiration into digital experiences, one project at a time.</p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">EXPLORE MY WORK ↘</a>
+        <a class="btn secondary" href="#contact">LET'S CONNECT ↗</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong>01</strong><small>CREATIVE MIND</small></div>
+        <div class="stat"><strong>∞</strong><small>NEW IDEAS</small></div>
+        <div class="stat"><strong>24/7</strong><small>CURIOUS</small></div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-tag">01 / About me</div>
+      <h2>Creating with curiosity.</h2>
+      <p class="section-copy">Hey, I'm Irfan. I'm interested in photography, creative visuals and experimenting with AI tools. This is my digital space to share selected work, ideas and projects. Replace this paragraph with your own short introduction.</p>
+    </section>
+
+    <section id="skills">
+      <div class="section-tag">02 / What I do</div>
+      <h2>My creative toolkit.</h2>
+      <div class="cards">
+        <article class="card"><div class="icon">📷</div><h3>Photography</h3><p>Capturing scenes, details and moments through my camera.</p></article>
+        <article class="card"><div class="icon">✦</div><h3>Creative Editing</h3><p>Building mood and style through photo and video edits.</p></article>
+        <article class="card"><div class="icon">⌘</div><h3>AI Experiments</h3><p>Exploring AI tools to turn ideas into creative visuals.</p></article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-tag">03 / Selected work</div>
+      <h2>Things I've created.</h2>
+      <p class="section-copy">Add your best photos, edits, videos or websites here. These are starter cards — change the titles and descriptions when you add your own projects.</p>
+      <div class="cards">
+        <article class="card project"><span>PROJECT 01</span><div><h3>Photo Stories</h3><p>A collection of my favourite frames.</p></div></article>
+        <article class="card project"><span>PROJECT 02</span><div><h3>Creative Edits</h3><p>Visual experiments and editing projects.</p></div></article>
+        <article class="card project"><span>PROJECT 03</span><div><h3>AI Creations</h3><p>Ideas explored with creative AI tools.</p></div></article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact-box">
+        <div class="section-tag">04 / Get in touch</div>
+        <h2>Let's create something.</h2>
+        <p class="section-copy">Want to see more of my work or connect? Add your Instagram profile link to the button below.</p>
+        <!-- Replace the # below with your Instagram profile URL -->
+        <a class="btn primary" href="#" target="_blank" rel="noopener">INSTAGRAM ↗</a>
+      </div>
+    </section>
+  </main>
+  <footer>© <span id="year"></span> IRFAN. MADE WITH CREATIVITY.</footer>
+</div>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const canvas=document.getElementById('particles'),ctx=canvas.getContext('2d');
+  let w,h,points=[];
+  function resize(){w=canvas.width=innerWidth;h=canvas.height=innerHeight;points=Array.from({length:Math.min(65,Math.floor(w/12))},()=>({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.8+.5}));}
+  function draw(){ctx.clearRect(0,0,w,h);for(let p of points){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(255,49,95,.8)';ctx.fill();}
+    for(let i=0;i<points.length;i++)for(let j=i+1;j<points.length;j++){let a=points[i],b=points[j],d=Math.hypot(a.x-b.x,a.y-b.y);if(d<115){ctx.strokeStyle=`rgba(255,49,95,${(1-d/115)*.18})`;ctx.lineWidth=.7;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}}
+    requestAnimationFrame(draw);
+  }
+  addEventListener('resize',resize);resize();draw();
+</script>
+</body>
+</html>
